@@ -4,13 +4,14 @@ import classes from "./EventList.module.css";
 import AddressIcon from "./icons/address-icon";
 import ArrowRightIcon from "./icons/arrow-right-icon";
 import DateIcon from "./icons/date-icon";
+import Image from "next/image"
 
 const EventList = (props) => {
   return (
     <ul className={classes.list}>
       {props.items.map((item) => (
         <li key={item.id} className={classes.item}>
-          <img src={item.image} alt={item.title} />
+          <Image src={"/" + item.image} alt={item.title} width={250} height={160} />
           <div className={classes.content}>
             <div className={classes.summary}>
               <h2>{item.title}</h2>
